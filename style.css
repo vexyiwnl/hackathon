@@ -1,12 +1,11 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap');
 
 :root {
-  --primary: #ff6b6b;    /* Main accent color */
-  --secondary: #4ecdc4;  /* Secondary accent color */
-  --accent: #ffe66d;     /* Highlight color */
-  --dark: #1a535c;       /* Dark color for backgrounds */
-  --light: #f7fff7;      /* Light color for text */
+  --primary: #ff6b6b;    
+  --secondary: #4ecdc4;  
+  --accent: #ffe66d;    
+  --dark: #1a535c;      
+  --light: #f7fff7;     
 }
 
 * {
@@ -35,36 +34,6 @@ a {
 
 a:hover {
   color: var(--accent);
-}
-
-.preloader {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #121212;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.preloader::after {
-  content: "LOADING...";
-  font-family: 'Press Start 2P', cursive;
-  color: var(--primary);
-  font-size: 24px;
-  animation: blink 1s infinite;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-body.loaded .preloader {
-  display: none;
 }
 
 .navbar {
@@ -157,6 +126,104 @@ body.loaded .preloader {
 .home-content p {
   font-size: 30px;
   color: var(--accent);
+}
+
+.hero-section {
+  min-height: 100vh;
+  padding: 120px 50px;
+  background-image: url('images/4.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-size: 42px;
+  color: black;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.hero-description {
+  background-color: rgba(26, 83, 92, 0.8);
+  padding: 40px;
+  border-radius: 15px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 20px rgba(255, 230, 109, 0.3);
+}
+
+.hero-description > p {
+  font-size: 28px;
+  margin-bottom: 30px;
+  color: var(--light);
+}
+
+.hero-highlights {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin: 30px 0;
+  gap: 20px;
+}
+
+.highlight-item {
+  flex: 1;
+  min-width: 250px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.3);
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(255, 107, 107, 0.3);
+}
+
+.highlight-item h3 {
+  font-size: 18px;
+  color: var(--accent);
+  margin-bottom: 15px;
+}
+
+.highlight-item p {
+  font-size: 22px;
+  color: var(--light);
+}
+
+.team-motto {
+  margin-top: 40px;
+  padding: 20px;
+  border-top: 2px dashed var(--secondary);
+}
+
+.team-motto p {
+  font-size: 26px;
+  font-style: italic;
+  color: var(--accent);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .features-section {
@@ -277,6 +344,36 @@ footer {
 .pixel-border {
   position: relative;
   display: inline-block;
-  padding: 5px;
-  border: 2px solid var(--primary);
+  color: black;
+  padding: 20px;
+  border: 6px solid var(--primary);
+  border-radius: 30px;
+  background-image: url("images/3.jpg")
+}
+
+@media screen and (max-width: 768px) {
+  .hero-section {
+    padding: 100px 20px;
+  }
+  
+  .hero-content h2 {
+    font-size: 32px;
+  }
+  
+  .hero-description {
+    padding: 25px;
+  }
+  
+  .hero-description > p {
+    font-size: 22px;
+  }
+  
+  .highlight-item {
+    min-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .team-motto p {
+    font-size: 22px;
+  }
 }
